@@ -169,6 +169,9 @@ class DirectoryListerGUI:
 
     def show_context_menu(self, event):
         self.context_menu.post(event.x_root, event.y_root)
+        # Capture the click position
+        self.context_menu_click_x = event.x
+        self.context_menu_click_y = event.y
 
     def copy_to_clipboard(self):
         column_index = int(self.tree.identify_column(self.context_menu_click_x).split('#')[1]) - 1
