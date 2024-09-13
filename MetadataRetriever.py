@@ -69,63 +69,71 @@ def get_file_type(file_path):
     """Determine the type of a file based on its extension."""
     ext = os.path.splitext(file_path)[1].lower()
     ext_dictionary = {
-        "Video": [
-            '.mp4', '.mkv', '.avi', '.mov', '.wmv', '.flv', '.webm', '.mpeg', '.mpg', '.3gp',
-            '.ts', '.vob', '.ogv', '.rm', '.swf', '.m4v', '.f4v', '.f4p', '.f4a', '.f4b'
-        ],
-        "Image": [
-            '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.ico', '.webp', '.heif', '.raw',
-            '.cr2', '.nef', '.orf', '.sr2', '.dng', '.indd', '.eps', '.ai', '.psd', '.svg', '.pdf'
-        ],
-        "Audio": [
-            '.mp3', '.wav', '.flac', '.aac', '.ogg', '.m4a', '.wma', '.aiff', '.alac', '.opus',
-            '.midi', '.ra', '.au', '.cda', '.ape', '.wma', '.mka', '.mod', '.s3m', '.it', '.xm'
-        ],
-        "Document": [
-            '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.odt', '.ods', '.odp',
-            '.rtf', '.txt', '.csv', '.html', '.xml', '.json', '.epub', '.mobi', '.djvu', '.tex',
-            '.md', '.log', '.yaml', '.conf', '.ini'
-        ],
-        "Archive": [
-            '.zip', '.rar', '.7z', '.tar', '.gz', '.bz2', '.xz', '.iso', '.z', '.lzh', '.cab',
-            '.arj', '.ace', '.uue', '.bin', '.dump', '.dmg', '.pkg', '.tar.gz', '.tar.bz2'
-        ],
-        "Executable": [
-            '.exe', '.bat', '.cmd', '.app', '.sh', '.msi', '.pkg', '.jar', '.run', '.bin',
-            '.out', '.appimage', '.apk', '.dmg', '.deb', '.rpm', '.wsf'
-        ],
-        "Script": [
-            '.py', '.js', '.rb', '.pl', '.php', '.cgi', '.asp', '.jsp', '.html', '.css',
-            '.sh', '.bash', '.vbs', '.ps1', '.command', '.sublime-build', '.sublime-project'
-        ],
-        "Font": [
-            '.ttf', '.otf', '.woff', '.woff2', '.eot', '.pfb', '.afm', '.fnt', '.fon', '.type1'
-        ],
-        "Database": [
-            '.db', '.sql', '.sqlite', '.mdb', '.accdb', '.dbf', '.sqlitedb', '.sqlite3', '.frm',
-            '.myd', '.myi', '.ibd', '.ibdata1'
-        ],
-        "Config": [
-            '.conf', '.ini', '.yaml', '.yml', '.json', '.xml', '.properties', '.cfg', '.config'
-        ],
-        "Web": [
-            '.html', '.htm', '.xhtml', '.php', '.asp', '.jsp', '.css', '.js', '.json', '.xml', '.rss'
-        ],
-        "Email": [
-            '.eml', '.msg', '.mbox', '.pst', '.ost', '.emlx'
-        ],
-        "CAD": [
-            '.dwg', '.dxf', '.stl', '.iges', '.step', '.3dm', '.skp'
-        ],
-        "Virtualization": [
-            '.vmdk', '.vdi', '.vhd', '.qcow2', '.ovf', '.ova', '.iso'
-        ],
-        "Log": [
-            '.log', '.out', '.trace', '.debug'
-        ],
-        "Folder":
-        ['']
-    }
+    "Video": [
+        '.mp4', '.mkv', '.avi', '.mov', '.wmv', '.flv', '.webm', '.mpeg', '.mpg', '.3gp',
+        '.ts', '.vob', '.ogv', '.rm', '.swf', '.m4v', '.f4v', '.f4p', '.f4a', '.f4b'
+    ],
+    "Image": [
+        '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.ico', '.webp', '.heif', '.raw',
+        '.cr2', '.nef', '.orf', '.sr2', '.dng', '.indd', '.eps', '.ai', '.psd', '.svg', '.pdf'
+    ],
+    "Audio": [
+        '.mp3', '.wav', '.flac', '.aac', '.ogg', '.m4a', '.wma', '.aiff', '.alac', '.opus',
+        '.midi', '.ra', '.au', '.cda', '.ape', '.mka', '.mod', '.s3m', '.it', '.xm', '.tak'
+    ],
+    "Document": [
+        '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.odt', '.ods', '.odp',
+        '.rtf', '.txt', '.csv', '.html', '.xml', '.json', '.epub', '.mobi', '.djvu', '.tex',
+        '.md', '.log', '.yaml', '.conf', '.ini'
+    ],
+    "Archive": [
+        '.zip', '.rar', '.7z', '.tar', '.gz', '.bz2', '.xz', '.iso', '.z', '.lzh', '.cab',
+        '.arj', '.ace', '.uue', '.bin', '.dump', '.dmg', '.pkg', '.tar.gz', '.tar.bz2',
+        '.tar.xz', '.tar.zst'
+    ],
+    "Executable": [
+        '.exe', '.bat', '.cmd', '.app', '.sh', '.msi', '.pkg', '.jar', '.run', '.bin',
+        '.out', '.appimage', '.apk', '.deb', '.rpm', '.wsf'
+    ],
+    "Script": [
+        '.py', '.js', '.rb', '.pl', '.php', '.cgi', '.asp', '.jsp', '.html', '.css',
+        '.bash', '.vbs', '.ps1', '.command', '.sublime-build', '.sublime-project',
+        '.java', '.cs', '.php', '.cpp', '.c', '.h', '.pl', '.go',
+        '.r', '.kt', '.ts', '.htm', '.scala', '.sh'
+    ],
+    "Font": [
+        '.ttf', '.otf', '.woff', '.woff2', '.eot', '.pfb', '.afm', '.fnt', '.fon', '.type1'
+    ],
+    "Database": [
+        '.db', '.sql', '.sqlite', '.mdb', '.accdb', '.dbf', '.sqlitedb', '.sqlite3', '.frm',
+        '.myd', '.myi', '.ibd', '.ibdata1'
+    ],
+    "Config": [
+        '.conf', '.ini', '.yaml', '.yml', '.json', '.xml', '.properties', '.cfg', '.config'
+    ],
+    "Web": [
+        '.html', '.htm', '.xhtml', '.php', '.asp', '.jsp', '.css', '.js', '.json', '.xml', '.rss'
+    ],
+    "Email": [
+        '.eml', '.msg', '.mbox', '.pst', '.ost', '.emlx'
+    ],
+    "CAD": [
+        '.dwg', '.dxf', '.stl', '.iges', '.step', '.3dm', '.skp', '.3ds', '.obj'
+    ],
+    "Virtualization": [
+        '.vmdk', '.vdi', '.vhd', '.qcow2', '.ovf', '.ova', '.iso'
+    ],
+    "Log": [
+        '.log', '.out', '.trace', '.debug'
+    ],
+    "Folder": [
+        ''
+    ],
+    "Adobe": [
+        '.ai', '.psd', '.pdf', '.indd', '.fla', '.swf', '.xfl', '.aep', '.prproj', '.au'
+    ]
+}
+
 
     for key in ext_dictionary:
         if ext in ext_dictionary[key]:
